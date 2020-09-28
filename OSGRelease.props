@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <OSG_HOME>F:\Project\OpenSceneGraph-OpenSceneGraph-3.6.5\vs2017_x64\install</OSG_HOME>
+    <OSG_INCLUDE>$(OSG_HOME)\Release\include</OSG_INCLUDE>
+    <OSG_LIB>$(OSG_HOME)\Release\lib</OSG_LIB>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(GEOS_HOME)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OSG_HOME)VS2010\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OSG_INCLUDE);$(PROJ4_INCLUDE);$(GEOS_INCLUDE);$(BOOST_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OSG_LIB);$(PROJ4_LIB);$(GEOS_LIB);$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>osgAnimation.lib;osg.lib;osgDB.lib;osgFX.lib;osgGA.lib;osgManipulator.lib;osgParticle.lib;osgPresentation.lib;osgQt.lib;osgShadow.lib;osgSim.lib;osgTerrain.lib;osgText.lib;osgUtil.lib;osgViewer.lib;osgVolume.lib;osgWidget.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="OSG_HOME">
+      <Value>$(OSG_HOME)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OSG_INCLUDE">
+      <Value>$(OSG_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OSG_LIB">
+      <Value>$(OSG_LIB)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

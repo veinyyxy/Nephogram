@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AlgorithmInterface.h" />
+    <ClInclude Include="AnimaticControler.h" />
+    <ClInclude Include="AnimaticControlerInterface.h" />
+    <ClInclude Include="AnimaticDataLoader.h" />
+    <ClInclude Include="AnimaticDataLoaderImp.h" />
+    <ClInclude Include="AnimaticFrame.h" />
+    <ClInclude Include="CardinalSpline.h" />
+    <ClInclude Include="ClipCallback.h" />
+    <ClInclude Include="ColdFront.h" />
+    <ClInclude Include="ColorTableActions.h" />
+    <ClInclude Include="CommonDataAccess.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="ControllerFrameContext.h" />
+    <ClInclude Include="ControllerManager.h" />
+    <ClInclude Include="DeleteSymbol.h" />
+    <ClInclude Include="DrawCircle.h" />
+    <ClInclude Include="DrawLine.h" />
+    <ClInclude Include="DrawLineSymbol.h" />
+    <ClInclude Include="DrawLrmImage.h" />
+    <ClInclude Include="DrawPolygonalLine.h" />
+    <ClInclude Include="DrawRect.h" />
+    <ClInclude Include="DrawSymbol.h" />
+    <ClInclude Include="DrawWindSymbol.h" />
+    <ClInclude Include="EarthquakeFileDisplay.h" />
+    <ClInclude Include="EarthQuakeSympolLibrary.h" />
+    <ClInclude Include="FrameModel.h" />
+    <ClInclude Include="IDPDrawGeometryData.h" />
+    <ClInclude Include="IDPUIControlImp.h" />
+    <ClInclude Include="idp_control_global.h" />
+    <ClInclude Include="LayerTreeControler.h" />
+    <ClInclude Include="MainControlFrame.h" />
+    <ClInclude Include="MapDataAccess.h" />
+    <ClInclude Include="MathHelper.h" />
+    <ClInclude Include="MoveSymbol.h" />
+    <ClInclude Include="OcclusionFront.h" />
+    <ClInclude Include="Radar3DFrameImp.h" />
+    <ClInclude Include="RadarAnimaticImp.h" />
+    <ClInclude Include="RadarCameraControler.h" />
+    <QtMoc Include="RadarDataAccess.h" />
+    <ClInclude Include="RadProjTransform.h" />
+    <ClInclude Include="TreeViewEventInterface.h" />
+    <ClInclude Include="VectorAlgorithm.h" />
+    <ClInclude Include="ViewManager.h" />
+    <ClInclude Include="ViewMapAdatper.h" />
+    <ClInclude Include="WarmFront.h" />
+    <ClInclude Include="Wind.h" />
+    <QtMoc Include="PlotDialog.h" />
+    <QtMoc Include="DB2Dialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimaticControler.cpp" />
+    <ClCompile Include="AnimaticDataLoaderImp.cpp" />
+    <ClCompile Include="CardinalSpline.cpp" />
+    <ClCompile Include="ClipCallback.cpp" />
+    <ClCompile Include="ColdFront.cpp" />
+    <ClCompile Include="ColorTableActions.cpp" />
+    <ClCompile Include="CommonDataAccess.cpp" />
+    <ClCompile Include="DB2Dialog.cpp" />
+    <ClCompile Include="DeleteSymbol.cpp" />
+    <ClCompile Include="DrawCircle.cpp" />
+    <ClCompile Include="DrawLine.cpp" />
+    <ClCompile Include="DrawLineSymbol.cpp" />
+    <ClCompile Include="DrawPolygonalLine.cpp" />
+    <ClCompile Include="DrawRect.cpp" />
+    <ClCompile Include="DrawSymbol.cpp" />
+    <ClCompile Include="DrawWindSymbol.cpp" />
+    <ClCompile Include="EarthquakeFileDisplay.cpp" />
+    <ClCompile Include="EarthQuakeSympolLibrary.cpp" />
+    <ClCompile Include="IDPDrawGeometryData.cpp" />
+    <ClCompile Include="IDPUIControlImp.cpp" />
+    <ClCompile Include="LayerTreeControler.cpp" />
+    <ClCompile Include="MainControlFrame.cpp" />
+    <ClCompile Include="MapDataAccess.cpp" />
+    <ClCompile Include="MathHelper.cpp" />
+    <ClCompile Include="MoveSymbol.cpp" />
+    <ClCompile Include="OcclusionFront.cpp" />
+    <ClCompile Include="PlotDialog.cpp" />
+    <ClCompile Include="Radar3DFrameImp.cpp" />
+    <ClCompile Include="RadarAnimaticImp.cpp" />
+    <ClCompile Include="RadarCameraControler.cpp" />
+    <ClCompile Include="RadarDataAccess.cpp" />
+    <ClCompile Include="RadProjTransform.cpp" />
+    <ClCompile Include="VectorAlgorithm.cpp" />
+    <ClCompile Include="ViewManager.cpp" />
+    <ClCompile Include="ViewMapAdatper.cpp" />
+    <ClCompile Include="WarmFront.cpp" />
+    <ClCompile Include="Wind.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="DB2Dialog.ui" />
+    <QtUic Include="PlotDialog.ui" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D45C0D79-2C89-478F-9F13-6963B203CE6F}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\OSGDebug.props" />
+    <Import Project="..\GDALDebug.props" />
+    <Import Project="..\OSGEARTHDebug.props" />
+    <Import Project="..\GEOSDebug.props" />
+    <Import Project="..\Proj4Debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\OSGRelease.props" />
+    <Import Project="..\GDALRelease.props" />
+    <Import Project="..\OSGEARTHRelease.props" />
+    <Import Project="..\GEOSRelease.props" />
+    <Import Project="..\Proj4Release.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>../Ground;../Sky;../GISExtend;../osgQt;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>Ground.lib;Sky.lib;osgQt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.10.1</QtInstall>
+    <QtModules>core;gui;opengl;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.10.1</QtInstall>
+    <QtModules>core</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>GRAPHICSCONTROLER_LIB;WEATHERMAGIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>WEATHERMAGIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D64FF482-2BF2-4C8C-B8EE-6FE0793FCF3F}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\OSGDebug.props" />
+    <Import Project="..\GEOSDebug.props" />
+    <Import Project="..\GDALDebug.props" />
+    <Import Project="..\Proj4Debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\OSGRelease.props" />
+    <Import Project="..\GEOSRelease.props" />
+    <Import Project="..\GDALRelease.props" />
+    <Import Project="..\Proj4Release.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.10.1</QtInstall>
+    <QtModules>
+    </QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.10.1</QtInstall>
+    <QtModules>
+    </QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CoordinateTransform.h" />
+    <ClInclude Include="DataProvider.h" />
+    <ClInclude Include="DefaultMapFactory.h" />
+    <ClInclude Include="Field.h" />
+    <ClInclude Include="Ground.h" />
+    <ClInclude Include="Ground_Global.h" />
+    <ClInclude Include="GeoTo3DTransform.h" />
+    <ClInclude Include="GisExtendPluginsManager.h" />
+    <ClInclude Include="ColorLump.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Contour.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="GeometryFactory.h" />
+    <ClInclude Include="LinearRing.h" />
+    <ClInclude Include="LineString.h" />
+    <ClInclude Include="Mark.h" />
+    <ClInclude Include="MultiLineString.h" />
+    <ClInclude Include="MultiPoint.h" />
+    <ClInclude Include="MultiPolygon.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="Quadrilateral.h" />
+    <ClInclude Include="SymbolContainer.h" />
+    <ClInclude Include="SymbolGeode.h" />
+    <ClInclude Include="SymbolPoint.h" />
+    <ClInclude Include="GraticuleCoordinates.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="LegendInterface.h" />
+    <ClInclude Include="ManualDrawLayer.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapFactory.h" />
+    <ClInclude Include="PluginsManager.h" />
+    <ClInclude Include="Proj4Transform.h" />
+    <ClInclude Include="ProviderPluginsManager.h" />
+    <ClInclude Include="SymbolLibraryInterface.h" />
+    <ClInclude Include="VectorLayer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CoordinateTransform.cpp" />
+    <ClCompile Include="DataProvider.cpp" />
+    <ClCompile Include="DefaultMapFactory.cpp" />
+    <ClCompile Include="Field.cpp" />
+    <ClCompile Include="GeosOnTheOsg.cpp" />
+    <ClCompile Include="GeoTo3DTransform.cpp" />
+    <ClCompile Include="GisExtendPluginsManager.cpp" />
+    <ClCompile Include="ColorLump.cpp" />
+    <ClCompile Include="Contour.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="GeometryFactory.cpp" />
+    <ClCompile Include="LinearRing.cpp" />
+    <ClCompile Include="LineString.cpp" />
+    <ClCompile Include="Mark.cpp" />
+    <ClCompile Include="MultiLineString.cpp" />
+    <ClCompile Include="MultiPoint.cpp" />
+    <ClCompile Include="MultiPolygon.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="Quadrilateral.cpp" />
+    <ClCompile Include="SymbolContainer.cpp" />
+    <ClCompile Include="SymbolPoint.cpp" />
+    <ClCompile Include="GraticuleCoordinates.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="ManualDrawLayer.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="PluginsManager.cpp" />
+    <ClCompile Include="Proj4Transform.cpp" />
+    <ClCompile Include="ProviderPluginsManager.cpp" />
+    <ClCompile Include="VectorLayer.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

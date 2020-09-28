@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <QTDIR>D:\QT\5.10.1\msvc2017_64</QTDIR>
+    <CIPAS_QT>D:\QT\5.10.1\msvc2017_64</CIPAS_QT>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(QTDIR)/include;$(QTDIR)/include/QtCore;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtOpenGL;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtXml;$(IncludePath)</IncludePath>
+    <LibraryPath>$(QTDIR)/lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Xmld.lib;Qt5Sqld.lib;Qt5OpenGLd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="QTDIR">
+      <Value>$(QTDIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CIPAS_QT">
+      <Value>$(CIPAS_QT)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

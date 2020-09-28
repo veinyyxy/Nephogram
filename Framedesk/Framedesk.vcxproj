@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9209F97C-CC83-4831-AAD4-F7C634CAC4EF}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\OSGDebug.props" />
+    <Import Project="..\OSGEARTHDebug.props" />
+    <Import Project="..\GEOSDebug.props" />
+    <Import Project="..\Proj4Debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\OSGRelease.props" />
+    <Import Project="..\OSGEARTHRelease.props" />
+    <Import Project="..\GEOSRelease.props" />
+    <Import Project="..\Proj4Release.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>../Ground;../Sky;../GISExtend;../osgQt;../WeatherMagic;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.10.1</QtInstall>
+    <QtModules>core;gui;opengl;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.10.1</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MainFrameWindow.cpp" />
+    <QtRcc Include="Framedesk.qrc" />
+    <QtRcc Include="mainwindow.qrc" />
+    <QtUic Include="AnimaticWidow.ui" />
+    <QtUic Include="AttributeDockWidget.ui" />
+    <QtUic Include="CentralMdiArea.ui" />
+    <QtUic Include="CommonToolBar.ui" />
+    <QtUic Include="ConfigDialog.ui" />
+    <QtUic Include="CZToolBar.ui" />
+    <QtUic Include="DefaultToolBar.ui" />
+    <QtUic Include="DisplaySettingsDialog.ui" />
+    <QtUic Include="FieldDialog.ui" />
+    <QtUic Include="Framedesk.ui" />
+    <QtMoc Include="Framedesk.h" />
+    <ClCompile Include="AnimaticAction.cpp" />
+    <ClCompile Include="AnimaticWidow.cpp" />
+    <ClCompile Include="CentralMdiArea.cpp" />
+    <ClCompile Include="CommonToolBar.cpp" />
+    <ClCompile Include="ConfigDialog.cpp" />
+    <ClCompile Include="ControllerFrameContextImps.cpp" />
+    <ClCompile Include="CZToolBar.cpp" />
+    <ClCompile Include="DefaultToolBar.cpp" />
+    <ClCompile Include="DrawGeometryActions.cpp" />
+    <ClCompile Include="FieldDialog.cpp" />
+    <ClCompile Include="Framedesk.cpp" />
+    <ClCompile Include="GridSetting.cpp" />
+    <ClCompile Include="IDPAbout.cpp" />
+    <ClCompile Include="LeftDockWidget.cpp" />
+    <ClCompile Include="LegendWidget.cpp" />
+    <ClCompile Include="LrmDlg.cpp" />
+    <ClCompile Include="main.cpp" />
+    <QtUic Include="GridSetting.ui" />
+    <QtUic Include="LeftDockWidget.ui" />
+    <QtUic Include="ProjCenterDialog.ui" />
+    <QtUic Include="RadarControlDWidget.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionFactory.h" />
+    <ClInclude Include="AnimaticAction.h" />
+    <ClInclude Include="ControllerFrameContextImps.h" />
+    <ClInclude Include="DisplayViewFactory.h" />
+    <ClInclude Include="DockWidgetFactory.h" />
+    <ClInclude Include="DockWidgetInterface.h" />
+    <ClInclude Include="DrawGeometryActions.h" />
+    <ClInclude Include="IDPdb.h" />
+    <ClInclude Include="idpui_global.h" />
+    <ClInclude Include="PathConifg.h" />
+    <QtMoc Include="MainFrameWindow.h" />
+    <QtMoc Include="LrmDlg.h" />
+    <QtMoc Include="LegendWidget.h" />
+    <QtMoc Include="LeftDockWidget.h" />
+    <QtMoc Include="IDPAbout.h" />
+    <QtMoc Include="GridSetting.h" />
+    <QtMoc Include="FieldDialog.h" />
+    <QtMoc Include="DefaultToolBar.h" />
+    <QtMoc Include="CZToolBar.h" />
+    <QtMoc Include="ConfigDialog.h" />
+    <QtMoc Include="CommonToolBar.h" />
+    <QtMoc Include="CentralMdiArea.h" />
+    <QtMoc Include="AnimaticWidow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IDPUI.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

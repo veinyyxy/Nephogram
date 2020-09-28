@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <OSG_EARTH_INCLUDE>F:\Project\gwaldron-osgearth-cc74edd\vs2017_x64\install\include</OSG_EARTH_INCLUDE>
+    <OSG_EARTH_LIB>F:\Project\gwaldron-osgearth-cc74edd\vs2017_x64\install\lib</OSG_EARTH_LIB>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(OSG_EARTH_INCLUDE);$(IncludePath)</IncludePath>
+    <LibraryPath>$(OSG_EARTH_LIB);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>osgEarth.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="OSG_EARTH_INCLUDE">
+      <Value>$(OSG_EARTH_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OSG_EARTH_LIB">
+      <Value>$(OSG_EARTH_LIB)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
